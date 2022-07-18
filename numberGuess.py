@@ -1,17 +1,18 @@
 import random
 
-count=0
+number=random.randint(0,100)
+guess=int(input("guess the number: "))
+count=1
 
-num=random.randint(1,100)
+if count==number:
+    print("congratulations you guessed the right number")
 
-guess=int(input("guess the number between 1 and hundred: "))
+while guess!= number:
+    if guess>number:
+        guess=int(input("wrong guess, you have made{} attempt, guess lower: ".format(count)))
+    elif guess<number:
+        guess=int(input("wrong guess, you have made{} attempt, guess  higher: ".format(count)))
+    count+=1
 
-
-while guess!=num:
-    # guess=input(: )
-    if guess>num:
-        print("wrong answer go again hint go higher: ")
-        guess=input(": ")
-    elif guess<num:
-        print("wrong answer go again hint go lower: ")
-        guess=input(": ")
+if count==number:
+    print("congratulations you guessed the right number in your {} attempt". format(count))
