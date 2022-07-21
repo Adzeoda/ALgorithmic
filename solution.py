@@ -39,7 +39,7 @@ def Palindrome(String):
 
     print(old)
 
-    output=inp.translate({ord("aN"):None})
+    output=inp.translate({ord("N"):None})
 
     # inp.purge(vim)
 
