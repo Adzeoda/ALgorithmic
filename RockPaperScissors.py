@@ -1,70 +1,51 @@
 import random
 
-obj = ["rock", "paper", "scissors"]
+yourPoints=0
+comPoints=0
 
-nuGames = int(input("how many rounds do you want to play?: "))
+def authentication(x,y,yourPoints,comPoints):
+    if x==1:
+        if y==1:
+          print("you draw you both played rock")
+        if y==2:
+            comPoints+=1
+            print("you played rock and computer played paper, you lost you have {} points and yiur opponent has {} points ".format(comPoints,yourPoints))
+        if y==3:
+            yourPoints=+1
+            print("you played rock and computer played scissors, you won you have {} points and yiur opponent has {} points ".format(comPoints,yourPoints))
+    if x==2:
+        if y==1:
+            yourPoints+=1
+            print("you played paper and computer played rock, you won you have {} points and yiur opponent has {} points ".format(comPoints,yourPoints))
+        if y==1:
+            print("you both played paper you have{} and computer has {} points".format(yourPoints,comPoints))
+        if y==3:
+            comPoints+=1
+            print("you played paper and computer played scissors, you lost you have {} points and yiur opponent has {} points ".format(comPoints,yourPoints))
 
-# player = int(input("enter 1 for rock, 2 for paper or 3 for scissors: "))
+    if x==3:
+        if y==1:
+            comPoints+=1
+            print("you played scissors and computer played rock, you lost you have {} points and yiur opponent has {} points ".format(comPoints,yourPoints))
+        if y==2:
+            yourPoints+=1
+            print("you played scissors and computer played paper, you lost you have {} points and yiur opponent has {} points ".format(comPoints,yourPoints))
+        if y==2:
+            print("you both played paper you have{} and computer has {} points".format(yourPoints,comPoints))
 
-yourscore=0
-comscore=0
 
-# for i in range(nuGames):
-#     if player not in (1, 2, 3):
-#         print("sorry, invalid answer input 1 for rock, 2 for paper or 3 for scissors")
-#         player = int(input(": "))
-#         player -= 1
+game=("rock","paper","scissors")
+
+nu=input("enter the number of games you want to play: ")
+x=input("1 for rock, 2 for paper and 3 for scissors: ")
+
+y=random.randint(1,3)
+
+for i in range(nu):
+    if x<1 or x>3:
+        print("wrong input enter 1 for rock 2 for paper or 3 for scissors: ")
+
+    elif x==1:
+        y=random.randint(1,3)
         
-#         comPlayed = random.randint(0, 2)
 
-
-#         if comPlayed == player:
-#             print("you played{}, computer played{}".format(obj[player], obj[comPlayed]))
-#             count += 1
-
-#         if comPlayed == 0:
-#             if player == 1:
-#                 print("you played{}, computer played{}".format(obj[player], obj[comPlayed]))
-#                 yourScore += 1
-#                 print("you win, you have{} points, computer has{}, points".format(yourScore, comScore))
-#             elif player == 2:
-#                 print("you played{}, computer played{}".format(obj[player], obj[comPlayed]))
-#                 comScore += 1
-#                 print("you lose, you have{} points, computer has{}, points".format(yourScore, comScore))
-
-#         if comPlayed == 1:
-#             if player == 0:
-#                 print("you played{}, computer played{}".format(obj[player], obj[comPlayed]))
-#                 comScore += 1
-#                 print("you lose, you have{} points, computer has{}, points".format(yourScore, comScore))
-#             elif player == 2:
-#                 print("you played{}, computer played{}".format(obj[player], obj[comPlayed]))
-#                 yourScore += 1
-#                 print("you win, you have{} points, computer has{}, points".format(yourScore, comScore))
-
-#         if comPlayed == 2:
-#             if player == 0:
-#                 print("you played{}, computer played{}".format(obj[player], obj[comPlayed]))
-#                 yourScore += 1
-#                 print("you win, you have{} points, computer has{}, points".format(yourScore, comScore))
-#             elif player == 1:
-#                 print("you played{}, computer played{}".format(obj[player], obj[comPlayed]))
-#                 comScore += 1
-#                 print("you lose, you have{} points, computer has{}, points".format(yourScore, comScore))
-
-#     count+=1
-
-#     print("you've played{} games, you've won{} games and computer has won{}, {}games more".format(count, yourScore,comScore,count - nuGames))
-def win():
-    yourscore+=1
-    print("you won, your score is {}, computer has {} points: ")
-
-def lose():
-    comscore+=1
-    print ("you lost this round, you have {} ponts and computer has {} points")
-
-def draw():
-    print("you drew this round, you have {} points and computer has {} points")
-
-for i in range(nuGames):
-    if pl
