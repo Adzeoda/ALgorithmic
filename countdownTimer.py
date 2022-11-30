@@ -9,5 +9,9 @@ def countdown(secs):
         secs-=1
     print('end')
 
-secs=5
+def countup(secs):
+    while secs:
+        min
+
+secs=int(input("enter the number of seconds you want to countdown: "))
 countdown(secs)
